@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Utility - Privacy Overhaul Tool</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #03eaff;
+      --dark: #0b0f1c;
+      --light: #21243a;
+      --shadow: 0 0 20px var(--blue), 0 0 40px #000 inset;
+      --radius: 16px;
+    }
+    body {
+      background: linear-gradient(135deg, #11131d 0%, #21243a 100%);
+      color: #f7fafc;
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem 1rem;
+      background: linear-gradient(90deg, var(--blue) 0%, #1c2236 100%);
+      box-shadow: var(--shadow);
+    }
+    h1 {
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 2.7rem;
+      letter-spacing: 0.07em;
+      color: var(--blue);
+      text-shadow: 0 0 18px var(--blue), 0 0 7px #fff;
+      margin-bottom: 0.7rem;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: #b3e7f7;
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 7px var(--blue);
+    }
+    main {
+      max-width: 410px;
+      margin: 2rem auto;
+      background: rgba(20,26,39, 0.98);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem 2rem 1.8rem 2rem;
+    }
+    .section-title {
+      font-family: 'Orbitron', Arial, sans-serif;
+      color: var(--blue);
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.06em;
+      text-shadow: 0 0 10px var(--blue);
+    }
+    .desc {
+      color: #d3edfa;
+      font-size: 1.04rem;
+      margin-bottom: 2.1rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .pay-section {
+      background: rgba(16,21,37,0.96);
+      border-radius: var(--radius);
+      box-shadow: 0 0 8px var(--blue) inset;
+      margin-bottom: 2.3rem;
+      padding: 1.3rem 1.1rem;
+    }
+    .crypto-list {
+      margin: 0.4rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 1rem;
+    }
+    .crypto-list li {
+      margin-bottom: 1.4rem;
+      background: #101728;
+      border-radius: 10px;
+      padding: 0.9rem;
+      box-shadow: 0 0 8px var(--blue) inset;
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+    .crypto-label {
+      font-weight: bold;
+      color: var(--blue);
+      font-size: 1.09rem;
+      letter-spacing: 0.04em;
+    }
+    .crypto-address {
+      word-break: break-all;
+      color: #b3e7f7;
+      font-size: 0.98rem;
+      margin-left: 0.2rem;
+    }
+    .qr {
+      width: 60px;
+      height: 60px;
+      margin-left: auto;
+      border-radius: 8px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .order-section {
+      margin-top: 2.2rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      margin-top: 1rem;
+    }
+    input, textarea {
+      background: #182033;
+      border: none;
+      border-radius: 8px;
+      padding: 0.95rem;
+      color: #f6fbff;
+      font-size: 1rem;
+      box-shadow: 0 0 7px var(--blue) inset;
+      outline: none;
+      transition: box-shadow 0.2s;
+    }
+    input:focus, textarea:focus {
+      box-shadow: 0 0 18px var(--blue) inset;
+    }
+    button {
+      background: linear-gradient(90deg, var(--blue) 30%, #11aaff 100%);
+      color: #0b0f1c;
+      border: none;
+      border-radius: 16px;
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 1.09rem;
+      padding: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 14px var(--blue);
+      letter-spacing: 0.08em;
+      transition: background 0.25s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #17f9ff 0%, #56b8ff 100%);
+      color: #181d2a;
+      box-shadow: 0 0 20px var(--blue), 0 0 6px #fff;
+    }
+    .how-to {
+      margin: 1.5rem 0 0.5rem 0;
+      font-size: 0.97rem;
+      color: #b8e9fb;
+      text-align: left;
+      line-height: 1.4;
+    }
+    @media (max-width: 600px) {
+      main {
+        padding: 1.2rem 0.4rem 1.2rem 0.4rem;
+        max-width: 98vw;
+      }
+      header {
+        padding-top: 2.2rem;
+      }
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>System Utility</h1>
+    <div class="subtitle">Complete Privacy & Secure Overhaul for Windows</div>
+  </header>
+  <main>
+    <div class="desc">
+      <b>System Utility</b> is your all-in-one solution to transform your Windows PC into a fortress of privacy, security, and performance. 
+      Effortlessly remove tracking, block telemetry, harden your operating system, and automate privacy best-practices. Simple, powerful, and made for those who value digital freedom.
+    </div>
+    <div class="pay-section">
+      <div class="section-title">Pay With Crypto</div>
+      <ul class="crypto-list">
+        <li>
+          <span class="crypto-label">Bitcoin (BTC):</span>
+          <span class="crypto-address" id="btc-address">bc1q7xsmdvfynv62ultkkzkvkwkvkxmmr6q6f9yuqw</span>
+          <span class="qr"><canvas id="btc-qr"></canvas></span>
+        </li>
+        <li>
+          <span class="crypto-label">Monero (XMR):</span>
+          <span class="crypto-address" id="xmr-address">88kPLyMUWKtJrxNfuQQ1GUKXmPyCnYqKMT8XAf2B62WeJdfSiH8sdKsf1ZzbDYq3FWbJGCEdHm5BWbQ57SQTNVPgRNvdsBK</span>
+          <span class="qr"><canvas id="xmr-qr"></canvas></span>
+        </li>
+      </ul>
+      <div class="how-to">
+        <b>How to Order:</b><br>
+        1. Send payment to one of the addresses above.<br>
+        2. Fill out the order form below with your payment details and email.<br>
+        3. You will receive your download link and activation within 24 hours.
+      </div>
+    </div>
+    <div class="order-section">
+      <div class="section-title">Order Form</div>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="Your Email (for delivery)" required>
+        <textarea name="payment-info" placeholder="Paste your payment TXID or details here" required></textarea>
+        <textarea name="notes" placeholder="Any notes or questions? (optional)"></textarea>
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </main>
+  <script>
+    // Generate QR codes
+    const btcAddress = document.getElementById('btc-address').innerText;
+    const xmrAddress = document.getElementById('xmr-address').innerText;
+    new QRious({ element: document.getElementById('btc-qr'), value: btcAddress, size: 60 });
+    new QRious({ element: document.getElementById('xmr-qr'), value: xmrAddress, size: 60 });
+  </script>
+</body>
+</html>
