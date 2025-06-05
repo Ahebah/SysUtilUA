@@ -203,7 +203,7 @@
     </div>
     <div class="order-section">
       <div class="section-title">Order Form</div>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
+      <form action="https://formspree.io/f/meokongp" method="POST">
         <input type="email" name="email" placeholder="Your Email (for delivery)" required>
         <textarea name="payment-info" placeholder="Paste your payment TXID or details here" required></textarea>
         <textarea name="notes" placeholder="Any notes or questions? (optional)"></textarea>
